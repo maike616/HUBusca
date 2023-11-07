@@ -4,12 +4,15 @@ import {
   Header, Title, StyledUserImage, StyledUserName, StyledUserLogin,
   StyledUserLocation, UserSearchContainer, InputField, SearchIcon, SearchButton, CustomActivityIndicator
 } from './styles';
+
+import RecentUsersSearch from '../RecentUsersSearch/RecentUsersSearch'
 import axios from "axios";
 
 const Home = ({ navigation }) => {
   const [userName, setUserName] = useState('');
   const [userData, setUserData] = useState(null);
   const [userNotFound, setUserNotFound] = useState(false);
+  const [recentUsers, setRecentUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   const fetchUserData = async () => {
@@ -18,6 +21,10 @@ const Home = ({ navigation }) => {
       const response = await axios.get(`https://api.github.com/users/${userName}`);
       setUserData(response.data);
       setUserNotFound(false);
+
+      if (!recentUsers.some((user) => user.login === response.data.login)) {
+        setRecentUsers([response.data, ...recentUsers]);
+      }
     } catch (error) {
       if (error.response && error.response.status === 404) {
         setUserNotFound(true);
@@ -28,12 +35,6 @@ const Home = ({ navigation }) => {
     setIsLoading(false);
   };
   return (
-    //<>
-      //<SafeArea>
-      //  <Header>
-      //    <Title>HUBusca</Title>
-      //  </Header>
-     // </SafeArea>
       <Container>
         {userNotFound && (
           <StyledErrorText>
@@ -66,8 +67,10 @@ const Home = ({ navigation }) => {
             )}
           </SearchButton>
         </UserSearchContainer>
+        {userData && (  
+        <RecentUsersSearch recentUsers={recentUsers} navigation={navigation} />
+      )}
       </Container>
-    //</>
   );
 };
 

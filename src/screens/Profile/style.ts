@@ -7,8 +7,12 @@ const Container = styled.ScrollView`
 `;
 
 const UserInfoContainer = styled.View`
+ 
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f0f0f0;
 `;
 
 
@@ -21,14 +25,14 @@ const Avatar = styled.Image`
 
 
 const InfoText = styled.Text`
-  color: ${props => props.theme.textColor}; 
+  color: ${props => props.theme.backgroundBody}; 
   margin-bottom: 5px;
   font-size: 16px;
 `;
 
 
 const ReposTitle = styled.Text`
-  color: ${props => props.theme.textColor}; 
+  color: ${props => props.theme.textColor};  
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -37,14 +41,16 @@ const ReposTitle = styled.Text`
 
 const RepoItem = styled.TouchableOpacity`
   border-bottom-width: 1px;
-  border-color: #ccc;
-  padding: 10px;
+  border-color: ${props => props.theme.textColor}; 
+  padding: 15px; 
   margin-bottom: 10px;
+  border-radius: 8px; 
+  background-color: #FFFFFF; 
 `;
 
 
 const RepoName = styled.Text`
-  color: ${props => props.theme.textColor}; 
+  color: ${props => props.theme.backgroundHeader}; 
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 5px;
@@ -52,9 +58,10 @@ const RepoName = styled.Text`
 
 
 const RepoInfo = styled.Text`
-  color: ${props => props.theme.textColor};     
+  color:${props => props.theme.backgroundHeader};      
   font-size: 14px;
 `;
+
 
 export {
     Container,

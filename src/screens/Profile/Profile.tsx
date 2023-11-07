@@ -8,7 +8,7 @@ import {Container,
     RepoItem,
     RepoName,
     RepoInfo, } from './style'
-import { Linking } from 'react-native';
+import { Linking} from 'react-native';
 
 const Profile = ({ route }: { route: any }) =>{
     const {userName} = route.params;
@@ -44,6 +44,7 @@ const Profile = ({ route }: { route: any }) =>{
           </UserInfoContainer>
         )}
         <ReposTitle>Repositórios:</ReposTitle>
+       
         {userRepos.map((repo) => (
         <RepoItem key={repo.id} onPress={() => openRepoInBrowser(repo.html_url)}>
           <RepoName>{repo.name}</RepoName>
@@ -52,6 +53,7 @@ const Profile = ({ route }: { route: any }) =>{
           <RepoInfo>Criado em: {repo.created_at}</RepoInfo>
           <RepoInfo>Último Push: {repo.updated_at}</RepoInfo>
         </RepoItem>
+        
       ))}
       </Container>
     );

@@ -56,6 +56,7 @@ const StyledUserLocation = styled.Text`
 const UserSearchContainer = styled.View`
 flex-direction: row;
 align-items: center;
+margin-left: 40px;
 `;
 
 const InputField = styled.TextInput`
