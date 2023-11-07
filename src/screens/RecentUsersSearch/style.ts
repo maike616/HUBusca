@@ -17,7 +17,7 @@ const UserItem = styled.TouchableOpacity`
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 8px;
-  background-color: #f0f0f0;
+  background-color: #f0f0f0;  
   ${Platform.OS === 'android' ? 'elevation: 5;' : 'shadow-color: #000; shadow-offset: { width: 0, height: 2 }; shadow-opacity: 0.25; shadow-radius: 3.84;'}
 `;
 
@@ -34,14 +34,16 @@ const UserInfo = styled.View`
 
 const UserName = styled.Text`
   font-weight: bold;
+  font-size: 16px;
 `;
 
 const LoginText = styled.Text`
-
+    color: #777;
 `;
 
 const LocationText = styled.Text`
-
+  font-style: italic;
+  font-size: 12px;
 `;
 export {
     Container,

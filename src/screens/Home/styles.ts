@@ -63,14 +63,14 @@ const InputField = styled.TextInput`
   flex: 1;
   border-width: 1px;
   padding: 10px;
-  margin: 10px;
+  margin: 20px 20px 20px 10px;
   background-color: ${props => props.theme.backgroundInputText}; 
   color:${props => props.theme.inputTextColor};
   font-weight: bold;
   border-radius: 10px;
 `;
 
-const SearchButton = styled.TouchableOpacity``;
+const StyledTouchableOpacity = styled.TouchableOpacity``;
 
 const CustomActivityIndicator = styled.ActivityIndicator.attrs({
     size: 'small',
@@ -110,7 +110,7 @@ export {
     StyledUserLocation,
     UserSearchContainer,
     InputField,
-    SearchButton,
+    StyledTouchableOpacity,
     CustomActivityIndicator,
     SearchIcon,
 };

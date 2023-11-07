@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {
   SafeArea, Container, StyledErrorText, UserDataContainer,
   Header, Title, StyledUserImage, StyledUserName, StyledUserLogin,
-  StyledUserLocation, UserSearchContainer, InputField, SearchIcon, SearchButton, CustomActivityIndicator
+  StyledUserLocation, UserSearchContainer, InputField, SearchIcon, StyledTouchableOpacity, CustomActivityIndicator
 } from './styles';
 
 import RecentUsersSearch from '../RecentUsersSearch/RecentUsersSearch'
@@ -44,9 +44,9 @@ const Home = ({ navigation }) => {
 
         {userData && !userNotFound && (
           <UserDataContainer>
-            <SearchButton onPress={() => navigation.navigate('Perfil', { userName: userData.login })}>
+            <StyledTouchableOpacity onPress={() => navigation.navigate('Perfil', { userName: userData.login })}>
               <StyledUserImage source={{ uri: userData.avatar_url }} />
-            </SearchButton>
+            </StyledTouchableOpacity>
             <StyledUserName>{userData.name}</StyledUserName>
             <StyledUserLogin>{userData.login}</StyledUserLogin>
             <StyledUserLocation>{userData.location}</StyledUserLocation>
@@ -55,17 +55,17 @@ const Home = ({ navigation }) => {
 
         <UserSearchContainer>
           <InputField
-            placeholder="Digite o nome de usuário do GitHub"
+            placeholder="Digite o usuário do GitHub"
             value={userName}
             onChangeText={(text) => setUserName(text)}
           />
-          <SearchButton onPress={fetchUserData} disabled={isLoading}>
+          <StyledTouchableOpacity onPress={fetchUserData} disabled={isLoading}>
             {isLoading ? (
               <CustomActivityIndicator />
             ) : (
               <SearchIcon name="ios-search" />
             )}
-          </SearchButton>
+          </StyledTouchableOpacity>
         </UserSearchContainer>
         {userData && (  
         <RecentUsersSearch recentUsers={recentUsers} navigation={navigation} />

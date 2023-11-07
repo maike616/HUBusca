@@ -12,7 +12,7 @@ const UserInfoContainer = styled.View`
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 8px;
-  background-color: #f0f0f0;
+  background-color:${props => props.theme.textColor};
 `;
 
 
@@ -45,7 +45,7 @@ const RepoItem = styled.TouchableOpacity`
   padding: 15px; 
   margin-bottom: 10px;
   border-radius: 8px; 
-  background-color: #FFFFFF; 
+  background-color: ${props => props.theme.textColor};; 
 `;
 
 

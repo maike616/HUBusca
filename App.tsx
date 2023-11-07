@@ -14,7 +14,8 @@ const theme ={
   backgroundInputText: '#FFFFFF',
   inputTextColor: '#000000',
   backgroundHeader: '#000000',
-  textColor: '#FFFFFF'
+  textColor: '#FFFFFF',
+  userInfoColor: '#f0f0f0',
 }
 
 export default function App() {
@@ -24,18 +25,18 @@ export default function App() {
       <NavigationContainer>
       <StatusBar
           backgroundColor={theme.backgroundHeader}
-          barStyle="light-content" // Define a cor dos ícones e textos como brancos
+          barStyle="light-content" 
         />
       <Stack.Navigator
       screenOptions={{
         headerTitleAlign: 'center',
         headerTitleStyle: {
-          color: theme.textColor, // Define a cor do título
-          fontSize: 24, // Define o tamanho do título
-          fontWeight: "bold", // Define o peso da fonte do título
+          color: theme.textColor, 
+          fontSize: 24, 
+          fontWeight: "bold", 
         },
         headerStyle: {
-          backgroundColor: theme.backgroundHeader, // Cor de fundo da barra de navegação (verde)
+          backgroundColor: theme.backgroundHeader, 
         },
       }}>
       <Stack.Screen name="HUBusca" component={Home}/>

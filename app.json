@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "904b83b6-75e1-4c82-bed6-2d4097325e02"
+      }
+    },
+    "android": {
+      "package": "com.marcosccp.hubusca"
+    }
+  }
+}
