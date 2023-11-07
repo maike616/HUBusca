@@ -1,13 +1,19 @@
-
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
+import React from "react";
 import Home from "./src/screens/Home/Home";
-const Stack = createNativeStackNavigator();
+import { ThemeProvider } from "styled-components/native";
 
+const theme ={
+  backgroundBody: '#2A2731',
+  backgroundInputText: '#FFFFFF',
+  inputTextColor: '#000000',
+  backgroundHeader: '#000000',
+  textColor: '#FFFFFF'
+}
 
 export default function App() {
   return (
-    <Home/>
-  );
+    <ThemeProvider theme={theme}>  
+      <Home/>
+    </ThemeProvider>
+    );
 }

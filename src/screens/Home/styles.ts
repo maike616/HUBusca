@@ -4,19 +4,19 @@ import { Ionicons } from '@expo/vector-icons'
 
 const SafeArea = styled.SafeAreaView`
 
- background-color: #000000;
+ background-color: ${props => props.theme.backgroundHeader};
  `;
 
 
 const Container = styled.View`
     flex: 1;
     align-items: center;
-    background-color: #2A2731;
+    background-color: ${props => props.theme.backgroundBody};
     padding-top: 50px;
 `;
 
 const StyledErrorText = styled.Text`
-    color: #FFFFFF; 
+    color: ${props => props.theme.textColor}; 
     font-size: 20px; 
     margin-top: 20px; 
     text-align: center; 
@@ -34,20 +34,20 @@ const StyledUserImage = styled.Image`
 `;
 
 const StyledUserName = styled.Text`
-  color: #FFFFFF;
+  color: ${props => props.theme.textColor}; 
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 5px;
 `;
 
 const StyledUserLogin = styled.Text`
-  color: #FFFFFF;
+  color: ${props => props.theme.textColor}; 
   font-size: 16px;
   margin-bottom: 5px;
 `;
 
 const StyledUserLocation = styled.Text`
-  color: #FFFFFF;
+  color: ${props => props.theme.textColor}; 
   font-size: 16px;
   font-style: italic;
   padding-bottom: 10px;
@@ -63,8 +63,9 @@ const InputField = styled.TextInput`
   border-width: 1px;
   padding: 10px;
   margin: 10px;
-  background-color: #FFFFFF;
-  color: #2A2731;
+  background-color: ${props => props.theme.backgroundInputText}; 
+  color:${props => props.theme.inputTextColor};
+  font-weight: bold;
   border-radius: 10px;
 `;
 
@@ -83,11 +84,11 @@ const SearchIcon = styled(Ionicons).attrs({
     size: 40,
 })`
   margin: 10px;
-  color: #FFFFFF;
+  color: ${props => props.theme.textColor}; 
 `;
 const Header = styled.View``;
 const Title = styled.Text`
-    color: #FFFFFF; 
+    color: ${props => props.theme.textColor};  
     font-size: 28px; 
     margin-top: 50px; 
     text-align: center; 
