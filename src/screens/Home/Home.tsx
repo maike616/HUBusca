@@ -6,7 +6,7 @@ import {
 } from './styles';
 import axios from "axios";
 
-const Home = ({ }) => {
+const Home = ({ navigation }) => {
   const [userName, setUserName] = useState('');
   const [userData, setUserData] = useState(null);
   const [userNotFound, setUserNotFound] = useState(false);
@@ -28,12 +28,12 @@ const Home = ({ }) => {
     setIsLoading(false);
   };
   return (
-    <>
-      <SafeArea>
-        <Header>
-          <Title>HUBusca</Title>
-        </Header>
-      </SafeArea>
+    //<>
+      //<SafeArea>
+      //  <Header>
+      //    <Title>HUBusca</Title>
+      //  </Header>
+     // </SafeArea>
       <Container>
         {userNotFound && (
           <StyledErrorText>
@@ -43,7 +43,9 @@ const Home = ({ }) => {
 
         {userData && !userNotFound && (
           <UserDataContainer>
-            <StyledUserImage source={{ uri: userData.avatar_url }} />
+            <SearchButton onPress={() => navigation.navigate('Perfil', { userName: userData.login })}>
+              <StyledUserImage source={{ uri: userData.avatar_url }} />
+            </SearchButton>
             <StyledUserName>{userData.name}</StyledUserName>
             <StyledUserLogin>{userData.login}</StyledUserLogin>
             <StyledUserLocation>{userData.location}</StyledUserLocation>
@@ -65,7 +67,7 @@ const Home = ({ }) => {
           </SearchButton>
         </UserSearchContainer>
       </Container>
-    </>
+    //</>
   );
 };
 
